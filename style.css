@@ -124,7 +124,99 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.12;margin:0}
 .wa-float:hover{transform:scale(1.04)}
 .wa-float svg{width:22px;height:22px;fill:currentColor}
 
+/* ---- about ---- */
+.about{background:var(--nude)}
+.about-inner{max-width:720px;margin:0 auto;text-align:center}
+.about-inner .tag{text-align:center}
+.about-inner h2{font-size:clamp(2rem,4vw,2.9rem);color:var(--wine)}
+.about-inner .bio{font-size:1.08rem;color:var(--muted);margin:18px auto 0;max-width:58ch}
+.about-inner .mote{
+  font-family:var(--serif);font-style:italic;font-size:1.5rem;
+  color:var(--gold);margin-top:26px;
+}
+.about-inner .mote::before,.about-inner .mote::after{content:"“";color:var(--gold-soft)}
+.about-inner .mote::after{content:"”"}
+
+/* ---- serviços ---- */
+.servicos{background:#fff}
+.servicos .head{text-align:center;max-width:640px;margin:0 auto 46px}
+.servicos .head h2{font-size:clamp(2rem,4vw,2.9rem);color:var(--wine)}
+.servicos .head p{color:var(--muted);margin-top:12px}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.svc-card{
+  background:var(--nude);border:1px solid rgba(74,22,38,.08);
+  border-radius:20px;padding:34px 30px;
+  display:flex;flex-direction:column;
+}
+.svc-card .kicker{
+  font-family:var(--serif);font-size:1.6rem;color:var(--wine);margin-bottom:4px;
+}
+.svc-card .sub{color:var(--gold);font-weight:600;font-size:.82rem;
+  text-transform:uppercase;letter-spacing:.14em;margin-bottom:18px}
+.svc-card ul{list-style:none;margin:0 0 24px;padding:0;flex:1}
+.svc-card li{position:relative;padding:7px 0 7px 26px;color:var(--ink);border-bottom:1px solid rgba(74,22,38,.06)}
+.svc-card li:last-child{border-bottom:none}
+.svc-card li::before{
+  content:"";position:absolute;left:4px;top:15px;
+  width:8px;height:8px;border-radius:50%;background:var(--gold);
+}
+.svc-card .btn-ghost{align-self:flex-start}
+
+/* ---- tecnologias ---- */
+.tech{background:var(--nude2)}
+.tech .head{text-align:center;max-width:620px;margin:0 auto 42px}
+.tech .head h2{font-size:clamp(1.9rem,3.6vw,2.6rem);color:var(--wine)}
+.tech .head p{color:var(--muted);margin-top:12px}
+.tech-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+.tech-item{
+  background:#fff;border-radius:16px;padding:24px 22px;
+  box-shadow:0 8px 20px rgba(74,22,38,.06);
+}
+.tech-item .dot{
+  width:40px;height:40px;border-radius:12px;margin-bottom:14px;
+  background:linear-gradient(140deg,var(--wine),var(--wine2));
+  display:flex;align-items:center;justify-content:center;
+}
+.tech-item .dot span{color:var(--gold-soft);font-family:var(--serif);font-weight:700;font-size:1.1rem}
+.tech-item h3{font-size:1.15rem;color:var(--wine);margin-bottom:6px}
+.tech-item p{color:var(--muted);font-size:.92rem;margin:0}
+
+/* ---- depoimentos ---- */
+.depo{background:#fff}
+.depo .head{text-align:center;margin-bottom:40px}
+.depo .head h2{font-size:clamp(1.9rem,3.6vw,2.6rem);color:var(--wine)}
+.depo-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:880px;margin:0 auto}
+.depo-card{
+  background:var(--nude);border-radius:20px;padding:30px 28px;
+  border-left:3px solid var(--gold);
+}
+.depo-card .stars{color:var(--gold);letter-spacing:3px;margin-bottom:12px}
+.depo-card blockquote{
+  margin:0;font-family:var(--serif);font-size:1.3rem;font-style:italic;
+  color:var(--ink);line-height:1.4;
+}
+.depo-card .who{margin-top:16px;font-weight:600;color:var(--wine);font-size:.95rem}
+
+/* ---- CTA final ---- */
+.cta{
+  background:linear-gradient(150deg,var(--wine),var(--wine2));
+  color:#fff;text-align:center;
+}
+.cta h2{font-size:clamp(2.1rem,4.4vw,3.2rem);color:#fff}
+.cta p{color:rgba(255,255,255,.82);margin:16px auto 30px;max-width:40ch}
+.cta .tag{color:var(--gold-soft);text-align:center}
+
+/* ---- rodapé ---- */
+.foot{background:var(--wine);color:rgba(255,255,255,.85);padding:48px 0 54px;text-align:center}
+.foot .monogram{display:block;margin-bottom:14px}
+.foot .lines{display:flex;flex-direction:column;gap:6px;font-size:.95rem}
+.foot a{color:var(--gold-soft);text-decoration:none}
+.foot a:hover{text-decoration:underline}
+.foot .cref{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-top:14px}
+
 @media (max-width:860px){
+  .svc-grid{grid-template-columns:1fr}
+  .depo-grid{grid-template-columns:1fr;max-width:480px}
   .hero-inner{grid-template-columns:1fr;gap:34px;padding:104px 0 70px;text-align:center}
   .hero-copy .lead{margin-left:auto;margin-right:auto}
   .hero-cta{justify-content:center}
