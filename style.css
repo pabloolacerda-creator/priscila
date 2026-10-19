@@ -1,0 +1,137 @@
+/* ===== Dra. Priscila Ribeiro — site ===== */
+:root{
+  --wine:#4a1626;
+  --wine2:#6d2238;
+  --gold:#b98a4b;
+  --gold-soft:#d8b98a;
+  --nude:#f3e9df;
+  --nude2:#e7d7c7;
+  --ink:#2b1a20;
+  --muted:#6b5a52;
+  --wa:#25d366;
+  --wa-ink:#053d1c;
+  --maxw:1120px;
+  --serif:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --sans:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:var(--sans);
+  color:var(--ink);
+  background:var(--nude);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+/* ---- shared ---- */
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.tag{
+  font-family:var(--sans);
+  text-transform:uppercase;
+  letter-spacing:.22em;
+  font-size:.72rem;
+  font-weight:600;
+  color:var(--gold);
+  margin:0 0 .9rem;
+}
+.serif{font-family:var(--serif)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.12;margin:0}
+.section{padding:84px 0}
+.section + .section{border-top:1px solid rgba(74,22,38,.08)}
+
+/* ---- buttons ---- */
+.btn-wa{
+  display:inline-flex;align-items:center;gap:.6rem;
+  background:var(--wa);color:var(--wa-ink);
+  font-weight:700;font-size:1rem;
+  padding:14px 26px;border-radius:40px;
+  text-decoration:none;
+  box-shadow:0 10px 24px rgba(37,211,102,.28);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(37,211,102,.38)}
+.btn-wa svg{width:20px;height:20px;fill:currentColor}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:.5rem;
+  color:var(--gold);border:1px solid var(--gold);
+  background:transparent;font-weight:600;
+  padding:11px 22px;border-radius:40px;text-decoration:none;
+  transition:background .18s ease,color .18s ease;
+}
+.btn-ghost:hover{background:var(--gold);color:#fff}
+
+/* ---- top brand bar ---- */
+.topbar{
+  position:absolute;top:0;left:0;right:0;z-index:5;
+  display:flex;justify-content:center;padding:22px 0;
+}
+.monogram{
+  font-family:var(--serif);font-weight:600;
+  letter-spacing:.35em;font-size:1.5rem;color:var(--gold-soft);
+}
+
+/* ---- hero ---- */
+.hero{
+  position:relative;
+  background:linear-gradient(150deg,var(--wine) 0%,var(--wine2) 100%);
+  color:#fff;overflow:hidden;
+}
+.hero::after{ /* soft gold glow */
+  content:"";position:absolute;right:-12%;top:-20%;
+  width:46vw;height:46vw;border-radius:50%;
+  background:radial-gradient(circle,rgba(216,185,138,.22),transparent 65%);
+  pointer-events:none;
+}
+.hero-inner{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;
+  padding:120px 0 90px;
+}
+.hero-copy .cref{
+  display:inline-block;border:1px solid rgba(216,185,138,.5);
+  color:var(--gold-soft);border-radius:30px;
+  padding:5px 14px;font-size:.72rem;letter-spacing:.18em;
+  text-transform:uppercase;margin-bottom:22px;
+}
+.hero-copy h1{font-size:clamp(2.6rem,5.2vw,4.2rem);color:#fff}
+.hero-copy .lead{
+  font-size:1.12rem;color:rgba(255,255,255,.82);
+  margin:20px 0 32px;max-width:30ch;
+}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.hero-photo{
+  position:relative;border-radius:22px;overflow:hidden;
+  box-shadow:0 30px 60px rgba(0,0,0,.35);
+  border:3px solid rgba(216,185,138,.35);
+  aspect-ratio:1086/1449;
+}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+
+/* ---- floating whatsapp ---- */
+.wa-float{
+  position:fixed;right:18px;bottom:18px;z-index:50;
+  display:flex;align-items:center;gap:.55rem;
+  background:var(--wa);color:var(--wa-ink);
+  font-weight:700;text-decoration:none;
+  padding:13px 20px;border-radius:40px;
+  box-shadow:0 10px 26px rgba(37,211,102,.4);
+  transition:transform .18s ease;
+}
+.wa-float:hover{transform:scale(1.04)}
+.wa-float svg{width:22px;height:22px;fill:currentColor}
+
+@media (max-width:860px){
+  .hero-inner{grid-template-columns:1fr;gap:34px;padding:104px 0 70px;text-align:center}
+  .hero-copy .lead{margin-left:auto;margin-right:auto}
+  .hero-cta{justify-content:center}
+  .hero-photo{max-width:380px;margin:0 auto;order:-1}
+  .section{padding:62px 0}
+}
+@media (max-width:480px){
+  .wa-float span{display:none}
+  .wa-float{padding:15px;border-radius:50%}
+}
